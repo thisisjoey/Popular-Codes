@@ -1,0 +1,111 @@
+#include<bits/stdc++.h>
+#include <unistd.h>
+using namespace std;
+    int romanToInt(string s) {
+        int number=0,n,temp;
+        n=s.size();
+        if(s[0]=='Z')
+        {
+        	return 0;
+		}
+		else
+        for(int i=0;i<n;i++)
+        {
+            if(s[i]=='M')
+            {
+                number=number+1000;
+            }
+            else if(s[i]=='D')
+            {
+                number=number+500;
+            }
+            else if(s[i]=='C')
+            {
+                if(s[i+1]=='D')
+                {
+                    number=number+400;
+                    i++;
+                }
+                else if(s[i+1]=='M')
+                {
+                    number=number+900;
+                    i++;
+                }
+                else
+                {
+                number=number+100;
+                }
+            }
+            else if(s[i]=='L')
+            {
+                number=number+50;
+            }
+            else if(s[i]=='X')
+            {
+                if(s[i+1]=='L')
+                {
+                    number=number+40;
+                    i++;
+                }
+                else if(s[i+1]=='C')
+                {
+                    number=number+90;
+                    i++;
+                }
+                else
+                {
+                number=number+10;
+                }
+            }
+            else if(s[i]=='V')
+            {
+                number=number+5;
+            }
+            else if(s[i]=='I')
+            {
+                if(s[i+1]=='X')
+                {
+                    number=number+9;
+                    i++;
+                }
+                else if(s[i+1]=='V')
+                {
+                    number=number+4;
+                    i++;
+                }
+                else
+                {
+                number=number+1;
+                }
+            }
+        }
+        return number;
+    }
+int main()
+{
+	while(1)
+	{
+		cout<<endl<<endl<<"--------------------Roman to Integer-------------------"<<endl;
+		cout<<endl<<"Press Z for self destruction of this program"<<endl;
+		cout<<"Enter a roman number you want to convert to numeric: -     ";
+		string s;
+	while(1)
+	{
+		cin>>s;
+		int a=romanToInt(s);
+		if(a==0)
+		{
+			cout<<"Initiating self destruction of the program in ...."<<endl;
+			for(int i=5;i>0;i--)
+			{
+				cout<<i<<endl;
+				sleep(1);
+			}
+			return 0;
+		}
+		cout<<endl<<"It is written as "<<a<<" in numeric form";
+		cout<<endl<<endl;
+	}
+	}
+	return 0;
+}
