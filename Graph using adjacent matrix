@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	//This is graph using adjacent matrix
+	cout<<"------------This is graph using adjacent matrix-----------------";
+	cout<<"\n Enter the number of edges in the graph";
+	int n;
+	cin>>n;
+	cout<<"\n Enter the number of vertices in the graph";
+	int m;
+	cin>>m;
+	int graph[n+1][n+1];
+	for(int i=1;i<m;i++)
+	{
+		int v1,v2;
+		cout<<"\nEnter the value of the node ";
+		cin>>v1;
+		cout<<"\nEnter the value of the node ";
+		cin>>v2;
+		graph[v1][v2];
+		graph[v2][v1];
+	}
+	return 0;
+}
